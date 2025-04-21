@@ -1,145 +1,140 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Christopher Ojeda | DevOps Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <title>Christopher Ojeda - Cloud DevOps Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Inter', sans-serif;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
+
     body {
-      background-color: #f9f9fb;
-      color: #333;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #ffffff;
       line-height: 1.6;
+      padding: 30px;
     }
-    header {
-      background: #1f2937;
-      color: #fff;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-    }
-    header p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-    }
+
     .container {
       max-width: 900px;
-      margin: 2rem auto;
-      padding: 1rem;
+      margin: auto;
+      background: #1e2a38;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     }
-    .photo {
-      text-align: center;
-      margin-bottom: 2rem;
+
+    img.profile-pic {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #00d9ff;
+      margin-bottom: 20px;
     }
-    .photo img {
-      max-width: 200px;
-      border-radius: 100px;
-      border: 4px solid #1f2937;
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: #00d9ff;
     }
-    section {
-      margin-bottom: 2rem;
-    }
+
     h2 {
-      font-size: 1.5rem;
-      color: #1f2937;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 0.3rem;
-      margin-bottom: 1rem;
+      font-size: 24px;
+      margin-top: 25px;
+      color: #00d9ff;
     }
-    ul {
-      list-style: none;
+
+    p {
+      font-size: 16px;
+      margin-top: 10px;
     }
-    ul li {
-      margin-bottom: 0.5rem;
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
     }
-    .stack span {
-      background: #1f2937;
-      color: #fff;
-      padding: 0.4rem 0.8rem;
-      margin: 0.2rem;
+
+    .tech-stack span {
+      background-color: #00d9ff;
+      color: #1e2a38;
+      padding: 8px 15px;
       border-radius: 20px;
-      display: inline-block;
-    }
-    .links a {
-      display: inline-block;
-      color: #1f2937;
-      margin-right: 1rem;
-      text-decoration: none;
       font-weight: 600;
+      font-size: 14px;
     }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      background: #eee;
-      color: #666;
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      font-weight: bold;
+      border-radius: 30px;
+      text-decoration: none;
+      background-color: #00d9ff;
+      color: #1e2a38;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #ffffff;
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>Christopher Ojeda</h1>
-    <p>Cloud DevOps Engineer | CI/CD • Kubernetes • Terraform • GitHub Actions</p>
-  </header>
-
   <div class="container">
-    <div class="photo">
-      <!-- Add your kristar.jpg image in the same folder and it will display here -->
-      <img src="kristar.jpg" alt="Christopher Ojeda" />
+    <center>
+      <!-- Add kristar.jpg in your folder -->
+      <img src="kristar.jpg" alt="Christopher Ojeda" class="profile-pic" />
+      <h1>Christopher Ojeda</h1>
+      <p><strong>Cloud DevOps Engineer</strong></p>
+      <a href="Christopher_resume.docx" class="btn" download>Download Resume</a>
+    </center>
+
+    <h2>About Me</h2>
+    <p>
+      I am a Cloud DevOps Engineer with hands-on experience automating infrastructure, deploying scalable applications, and managing CI/CD pipelines using tools like GitHub Actions, Terraform, and Kubernetes. 
+      I have worked across Azure and AWS environments and previously managed a team of 47 in a recycling business.
+    </p>
+
+    <h2>Tech Stack</h2>
+    <div class="tech-stack">
+      <span>Azure</span>
+      <span>AWS</span>
+      <span>Terraform</span>
+      <span>GitHub Actions</span>
+      <span>Docker</span>
+      <span>Kubernetes (AKS)</span>
+      <span>Helm</span>
+      <span>Ansible</span>
+      <span>Monitoring</span>
+      <span>Go (Golang)</span>
     </div>
 
-    <section>
-      <h2>About Me</h2>
-      <p>I’m a passionate DevOps Engineer with hands-on experience in deploying cloud-native applications, automating pipelines, managing infrastructure as code, and securing scalable systems. I build with simplicity and efficiency in mind.</p>
-    </section>
+    <h2>Projects</h2>
+    <p>
+      <strong>Go Snake Game Deployment:</strong><br />
+      Built and deployed a containerized Go snake game on AKS with full CI/CD automation, monitored using Azure-native tools. Integrated Ingress Controller and Key Vault for secrets management.
+    </p>
 
-    <section>
-      <h2>Tech Stack</h2>
-      <div class="stack">
-        <span>Azure</span>
-        <span>AWS</span>
-        <span>Docker</span>
-        <span>Kubernetes</span>
-        <span>Terraform</span>
-        <span>GitHub Actions</span>
-        <span>Helm</span>
-        <span>Ingress</span>
-        <span>Ansible</span>
-        <span>Monitoring</span>
-      </div>
-    </section>
+    <p>
+      <strong>Multi-Tenant Azure Setup:</strong><br />
+      Created multiple tenants and users in Azure for a YouTube documentation series.
+    </p>
 
-    <section>
-      <h2>Projects & Resume</h2>
-      <ul>
-        <li><a href="https://kristarking.github.io" target="_blank">Live Portfolio Website</a></li>
-        <li><a href="https://github.com/kristarking" target="_blank">GitHub Projects</a></li>
-        <li><a href="https://www.youtube.com/@kristarking" target="_blank">YouTube Channel</a></li>
-        <li><a href="Christopher_DevOps_Resume.pdf" download>Download My Resume (PDF)</a></li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Contact</h2>
-      <p>Email: ojedayochristopher@gmail.com</p>
-      <p>Location: Nigeria</p>
-    </section>
+    <h2>Contact</h2>
+    <p>
+      📧 Email: ojedayochristopher@gmail.com<br/>
+      🔗 GitHub: <a href="https://github.com/kristarking" target="_blank" style="color: #00d9ff;">kristarking</a><br/>
+      🎥 YouTube: <a href="https://www.youtube.com/@kristarking" target="_blank" style="color: #00d9ff;">@kristarking</a>
+    </p>
   </div>
-
-  <footer>
-    © 2025 Christopher Ojedayo. All Rights Reserved.
-  </footer>
-
 </body>
 </html>
