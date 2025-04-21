@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Christopher Ojeda - Cloud DevOps Engineer</title>
+  <title>Christopher Ojedayo - Cloud DevOps Engineer</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
   <style>
     * {
@@ -12,14 +12,11 @@
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
     }
-
     body {
       background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
       color: #ffffff;
-      line-height: 1.6;
       padding: 30px;
     }
-
     .container {
       max-width: 900px;
       margin: auto;
@@ -28,7 +25,6 @@
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     }
-
     img.profile-pic {
       width: 180px;
       height: 180px;
@@ -37,31 +33,26 @@
       border: 4px solid #00d9ff;
       margin-bottom: 20px;
     }
-
     h1 {
       font-size: 36px;
       margin-bottom: 10px;
       color: #00d9ff;
     }
-
     h2 {
       font-size: 24px;
       margin-top: 25px;
       color: #00d9ff;
     }
-
     p {
       font-size: 16px;
       margin-top: 10px;
     }
-
     .tech-stack {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       margin-top: 15px;
     }
-
     .tech-stack span {
       background-color: #00d9ff;
       color: #1e2a38;
@@ -70,7 +61,6 @@
       font-weight: 600;
       font-size: 14px;
     }
-
     .btn {
       display: inline-block;
       margin-top: 20px;
@@ -82,7 +72,6 @@
       color: #1e2a38;
       transition: background 0.3s ease;
     }
-
     .btn:hover {
       background-color: #ffffff;
     }
@@ -91,17 +80,16 @@
 <body>
   <div class="container">
     <center>
-      <!-- Add kristar.jpg in your folder -->
+      <!-- Place your profile picture named kristar.jpg in the same folder -->
       <img src="kristar.jpg" alt="Christopher Ojeda" class="profile-pic" />
-      <h1>Christopher Ojeda</h1>
+      <h1>Christopher Ojedayo</h1>
       <p><strong>Cloud DevOps Engineer</strong></p>
-      <a href="Christopher_resume.docx" class="btn" download>Download Resume</a>
+      <a href="Christopher_Resume.docx" class="btn" download>Download Resume</a>
     </center>
 
     <h2>About Me</h2>
     <p>
-      I am a Cloud DevOps Engineer with hands-on experience automating infrastructure, deploying scalable applications, and managing CI/CD pipelines using tools like GitHub Actions, Terraform, and Kubernetes. 
-      I have worked across Azure and AWS environments and previously managed a team of 47 in a recycling business.
+      I’m a Cloud DevOps Engineer passionate about automating infrastructure, deploying containerized apps, and delivering scalable solutions in Azure and AWS. I transitioned into tech after managing 47 staff in a recycling business, and now specialize in DevOps tools like Terraform, GitHub Actions, Kubernetes, and Ansible.
     </p>
 
     <h2>Tech Stack</h2>
@@ -119,14 +107,28 @@
     </div>
 
     <h2>Projects</h2>
-    <p>
-      <strong>Go Snake Game Deployment:</strong><br />
-      Built and deployed a containerized Go snake game on AKS with full CI/CD automation, monitored using Azure-native tools. Integrated Ingress Controller and Key Vault for secrets management.
+    <p><strong>CI/CD Pipeline: Node.js App with GitHub Actions</strong><br>
+    Dockerized Node.js app built, tested, and deployed using GitHub Actions. Image pushed to Docker Hub and deployed on Azure VM via NGINX.
     </p>
 
-    <p>
-      <strong>Multi-Tenant Azure Setup:</strong><br />
-      Created multiple tenants and users in Azure for a YouTube documentation series.
+    <p><strong>JS Clock App Load Balanced on Cloned Azure VMs</strong><br>
+    Created a JavaScript time-zone app, cloned base VM image into multiples, and configured load balancer to manage traffic.
+    </p>
+
+    <p><strong>Static HTML E-commerce with HTTPS & Custom Domain</strong><br>
+    Deployed HTML site on Azure VM, configured NGINX SSL, routed DNS to domain name with HTTPS enforcement.
+    </p>
+
+    <p><strong>AKS Deployment: Go App with Helm & Ingress</strong><br>
+    Containerized Go app deployed to AKS using Helm charts with Ingress Controller, Key Vault integration, and autoscaling setup.
+    </p>
+
+    <p><strong>Ansible Automation Across Azure VMs</strong><br>
+    Provisioned and configured target VM from control node using Ansible playbooks to install NGINX and deploy apps.
+    </p>
+
+    <p><strong>Multi-Tenant Azure Setup for Identity Practice</strong><br>
+    Created multiple Azure tenants and users for internal practice and YouTube teaching content on cloud access control.
     </p>
 
     <h2>Contact</h2>
