@@ -1,148 +1,619 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Christopher Ojedayo - Cloud DevOps Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-    body {
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: #ffffff;
-      padding: 30px;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      background: #1e2a38;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    }
-    img.profile-pic {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #00d9ff;
-      margin-bottom: 20px;
-    }
-    h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-      color: #00d9ff;
-    }
-    h2 {
-      font-size: 24px;
-      margin-top: 25px;
-      color: #00d9ff;
-    }
-    p {
-      font-size: 16px;
-      margin-top: 10px;
-    }
-    .tech-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 15px;
-    }
-    .tech-stack span {
-      background-color: #00d9ff;
-      color: #1e2a38;
-      padding: 8px 15px;
-      border-radius: 20px;
-      font-weight: 600;
-      font-size: 14px;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      font-weight: bold;
-      border-radius: 30px;
-      text-decoration: none;
-      background-color: #00d9ff;
-      color: #1e2a38;
-      transition: background 0.3s ease;
-    }
-    .btn:hover {
-      background-color: #ffffff;
-    }
-  </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Christopher Ojedayo Cloud & DevOps Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --ink:     #0D1117;
+  --ink2:    #1C2230;
+  --steel:   #1E3A5F;
+  --azure:   #0A84FF;
+  --cyan:    #00D4FF;
+  --mist:    #E8F4FF;
+  --fog:     #F0F6FF;
+  --white:   #FFFFFF;
+  --mid:     #5C6B82;
+  --light:   #A0B4C8;
+  --gap-sm:  1.2rem;
+  --gap-md:  2.4rem;
+  --gap-lg:  5rem;
+  --r:       10px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--ink);
+  color: var(--white);
+  overflow-x: hidden;
+  line-height: 1.65;
+}
+
+/* ─── NAV ─────────────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.2rem 5%;
+  background: rgba(13,17,23,0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0,212,255,0.1);
+}
+.nav-brand {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800; font-size: 1.05rem; letter-spacing: 0.04em;
+  background: linear-gradient(135deg, var(--cyan), var(--azure));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+.nav-links { display: flex; gap: 2.2rem; list-style: none; }
+.nav-links a {
+  font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--light); text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--cyan); }
+
+/* ─── HERO ────────────────────────────────────────────── */
+#hero {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  padding: 8rem 5% 5rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero-grid {
+  position: absolute; inset: 0; opacity: 0.04;
+  background-image:
+    linear-gradient(var(--azure) 1px, transparent 1px),
+    linear-gradient(90deg, var(--azure) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.hero-glow {
+  position: absolute;
+  top: -20%; left: 50%; transform: translateX(-50%);
+  width: 900px; height: 600px;
+  background: radial-gradient(ellipse, rgba(0,132,255,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: 900px; width: 100%;
+  position: relative; z-index: 1;
+}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--cyan); margin-bottom: 1.8rem;
+}
+.hero-tag::before {
+  content: ''; display: block;
+  width: 28px; height: 2px;
+  background: var(--cyan);
+}
+h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.8rem, 7vw, 5.2rem);
+  font-weight: 800; line-height: 1.08;
+  color: var(--white);
+  margin-bottom: 1.4rem;
+}
+h1 span {
+  background: linear-gradient(135deg, var(--cyan) 0%, var(--azure) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.hero-sub {
+  font-size: 1.1rem; color: var(--mid);
+  max-width: 640px; margin-bottom: 2.6rem;
+  line-height: 1.7;
+}
+.hero-chips {
+  display: flex; flex-wrap: wrap; gap: 0.65rem;
+  margin-bottom: 2.8rem;
+}
+.chip {
+  padding: 0.38rem 1rem;
+  border-radius: 40px;
+  font-size: 0.78rem; letter-spacing: 0.05em;
+  background: rgba(0,212,255,0.07);
+  border: 1px solid rgba(0,212,255,0.2);
+  color: var(--cyan);
+}
+.hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary {
+  padding: 0.85rem 2.2rem;
+  background: linear-gradient(135deg, var(--cyan), var(--azure));
+  color: var(--ink); font-weight: 700; font-size: 0.9rem;
+  border-radius: var(--r); text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: opacity 0.2s, transform 0.2s;
+  display: inline-block;
+}
+.btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+.btn-secondary {
+  padding: 0.85rem 2.2rem;
+  background: transparent;
+  border: 1px solid rgba(0,212,255,0.4);
+  color: var(--cyan); font-weight: 500; font-size: 0.9rem;
+  border-radius: var(--r); text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: background 0.2s, transform 0.2s;
+  display: inline-block;
+}
+.btn-secondary:hover { background: rgba(0,212,255,0.07); transform: translateY(-1px); }
+
+/* ─── SECTIONS ────────────────────────────────────────── */
+section {
+  padding: var(--gap-lg) 5%;
+  max-width: 1100px; margin: 0 auto;
+}
+.section-tag {
+  font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--cyan); margin-bottom: 0.6rem;
+  display: flex; align-items: center; gap: 0.6rem;
+}
+.section-tag::before {
+  content: ''; display: block;
+  width: 20px; height: 2px; background: var(--cyan);
+}
+h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700;
+  color: var(--white); margin-bottom: var(--gap-md);
+}
+
+/* ─── SKILLS ──────────────────────────────────────────── */
+#skills { max-width: 1100px; }
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.2rem;
+}
+.skill-card {
+  background: var(--ink2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--r);
+  padding: 1.6rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.skill-card:hover {
+  border-color: rgba(0,212,255,0.3);
+  transform: translateY(-2px);
+}
+.skill-card-label {
+  font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--azure); margin-bottom: 0.7rem; font-weight: 600;
+}
+.skill-card p { font-size: 0.88rem; color: var(--light); line-height: 1.6; }
+
+/* ─── PROJECTS ────────────────────────────────────────── */
+#projects { max-width: 1100px; }
+.projects-grid { display: grid; gap: 1.4rem; }
+.project-card {
+  background: var(--ink2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--r);
+  padding: 2.2rem;
+  position: relative; overflow: hidden;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.project-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--cyan), var(--azure));
+  opacity: 0; transition: opacity 0.25s;
+}
+.project-card:hover { border-color: rgba(0,212,255,0.25); transform: translateY(-2px); }
+.project-card:hover::before { opacity: 1; }
+.project-head {
+  display: flex; justify-content: space-between;
+  align-items: flex-start; gap: 1rem;
+  margin-bottom: 1rem;
+}
+.project-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.2rem; font-weight: 700; color: var(--white);
+}
+.project-badge {
+  font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0.3rem 0.8rem; border-radius: 4px;
+  background: rgba(0,212,255,0.1); color: var(--cyan);
+  border: 1px solid rgba(0,212,255,0.2);
+  white-space: nowrap; flex-shrink: 0;
+}
+.project-desc { font-size: 0.9rem; color: var(--mid); margin-bottom: 1.2rem; line-height: 1.7; }
+.project-tech {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  margin-bottom: 1.4rem;
+}
+.tech-tag {
+  font-size: 0.72rem; padding: 0.2rem 0.7rem;
+  background: rgba(30,58,95,0.6); color: var(--light);
+  border-radius: 4px; border: 1px solid rgba(255,255,255,0.08);
+}
+.project-links { display: flex; gap: 1rem; }
+.project-links a {
+  font-size: 0.82rem; color: var(--azure); text-decoration: none;
+  display: flex; align-items: center; gap: 0.35rem;
+  transition: color 0.2s;
+}
+.project-links a:hover { color: var(--cyan); }
+
+/* ─── EXPERIENCE ──────────────────────────────────────── */
+#experience { max-width: 1100px; }
+.exp-list { display: flex; flex-direction: column; gap: 2rem; }
+.exp-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 0 2.4rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.exp-item:last-child { border-bottom: none; }
+.exp-meta { padding-top: 0.15rem; }
+.exp-date { font-size: 0.8rem; color: var(--mid); margin-bottom: 0.35rem; }
+.exp-co { font-size: 0.85rem; color: var(--azure); font-weight: 500; }
+.exp-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.05rem; font-weight: 700; color: var(--white);
+  margin-bottom: 0.8rem;
+}
+.exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
+.exp-bullets li {
+  font-size: 0.88rem; color: var(--mid); padding-left: 1.1rem;
+  position: relative; line-height: 1.6;
+}
+.exp-bullets li::before {
+  content: '▸'; position: absolute; left: 0;
+  color: var(--azure); font-size: 0.75rem; top: 0.1em;
+}
+
+/* ─── ABOUT ───────────────────────────────────────────── */
+#about { max-width: 1100px; }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+.about-text p { font-size: 0.95rem; color: var(--mid); line-height: 1.8; margin-bottom: 1rem; }
+.about-text p:last-child { margin-bottom: 0; }
+.about-stats {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;
+}
+.stat-card {
+  background: var(--ink2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--r);
+  padding: 1.6rem 1.4rem;
+  text-align: center;
+}
+.stat-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.2rem; font-weight: 800;
+  background: linear-gradient(135deg, var(--cyan), var(--azure));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  display: block; margin-bottom: 0.25rem;
+}
+.stat-label { font-size: 0.78rem; color: var(--light); letter-spacing: 0.04em; }
+
+/* ─── CONTACT ─────────────────────────────────────────── */
+#contact { max-width: 1100px; text-align: center; }
+#contact p { font-size: 1rem; color: var(--mid); max-width: 520px; margin: 0 auto 2.4rem; line-height: 1.7; }
+.contact-links {
+  display: flex; justify-content: center;
+  flex-wrap: wrap; gap: 1.2rem;
+  margin-bottom: 2.8rem;
+}
+.contact-link {
+  padding: 0.75rem 1.8rem;
+  background: var(--ink2);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--r);
+  color: var(--light); text-decoration: none;
+  font-size: 0.88rem;
+  display: flex; align-items: center; gap: 0.5rem;
+  transition: border-color 0.2s, color 0.2s;
+}
+.contact-link:hover { border-color: var(--cyan); color: var(--cyan); }
+
+/* ─── FOOTER ──────────────────────────────────────────── */
+footer {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 2.4rem 5%; text-align: center;
+  font-size: 0.8rem; color: var(--mid);
+}
+
+/* ─── ANIMATIONS ──────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-inner > * {
+  animation: fadeUp 0.7s ease both;
+}
+.hero-inner > *:nth-child(1) { animation-delay: 0.05s; }
+.hero-inner > *:nth-child(2) { animation-delay: 0.15s; }
+.hero-inner > *:nth-child(3) { animation-delay: 0.25s; }
+.hero-inner > *:nth-child(4) { animation-delay: 0.35s; }
+.hero-inner > *:nth-child(5) { animation-delay: 0.45s; }
+
+/* ─── RESPONSIVE ──────────────────────────────────────── */
+@media (max-width: 760px) {
+  .nav-links { display: none; }
+  .about-grid { grid-template-columns: 1fr; }
+  .exp-item { grid-template-columns: 1fr; gap: 0.3rem; }
+  h1 { font-size: 2.4rem; }
+}
+</style>
 </head>
 <body>
-  <div class="container">
-    <center>
-      <!-- Place your profile picture named kristar.jpg in the same folder -->
-      <img src="kristar.jpg" alt="Christopher Ojeda" class="profile-pic" />
-      <h1>Christopher Ojedayo</h1>
-      <p><strong>Cloud DevOps Engineer</strong></p>
-      <a href="Christopher_Resume.docx" class="btn" download>Download Resume</a>
-    </center>
 
-    <h2>About Me</h2>
-    <p>
-      I’m a Cloud DevOps Engineer passionate about automating infrastructure, deploying containerized apps, and delivering scalable solutions in Azure and AWS. I transitioned into tech after managing 47 staff in a recycling business, and now specialize in DevOps tools like Terraform, GitHub Actions, Kubernetes, and Ansible.
+<nav>
+  <a href="#hero" class="nav-brand">Christopher Ojedayo</a>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ─── HERO ─────────────────────────────────────────── -->
+<div id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">Cloud &amp; DevOps Engineer</div>
+    <h1>Building infrastructure<br>that <span>ships, scales,<br>and survives.</span></h1>
+    <p class="hero-sub">
+      I design, automate, and operate production cloud systems on Azure and AWS
+      from Kubernetes clusters and Terraform modules to zero-downtime CI/CD pipelines.
+      Two production deployments. Live. Documented. Open source.
     </p>
+    <div class="hero-chips">
+      <span class="chip">Kubernetes · AKS · EKS</span>
+      <span class="chip">Terraform</span>
+      <span class="chip">GitHub Actions CI/CD</span>
+      <span class="chip">Docker · Helm</span>
+      <span class="chip">AWS ECS Fargate</span>
+      <span class="chip">Azure · Cloudflare</span>
+      <span class="chip">Prometheus · Grafana</span>
+    </div>
+    <div class="hero-ctas">
+      <a href="Christopher_Ojedayo_CV.docx" class="btn-primary" download>⬇ Download CV</a>
+      <a href="#projects" class="btn-secondary">View Projects →</a>
+      <a href="https://linkedin.com/in/christopherojedayo" target="_blank" class="btn-secondary">LinkedIn</a>
+    </div>
+  </div>
+</div>
 
-    <h2>Tech Stack</h2>
-    <div class="tech-stack">
-      <span>Azure</span>
-      <span>AWS</span>
-      <span>Terraform</span>
-      <span>GitHub Actions</span>
-      <span>Docker</span>
-      <span>Kubernetes (AKS)</span>
-      <span>Helm</span>
-      <span>Ansible</span>
-      <span>Monitoring</span>
-      <span>Go (Golang)</span>
+<!-- ─── SKILLS ────────────────────────────────────────── -->
+<section id="skills">
+  <div class="section-tag">Technical Skills</div>
+  <h2>What I build with</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-card-label">Cloud Platforms</div>
+      <p>Azure (AKS, ACR, VMs, VNet, App Service, Storage, Load Balancer) · AWS (ECS Fargate, ECR, ALB, RDS, ElastiCache, Secrets Manager, CloudWatch, ACM, VPC)</p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-label">Containers &amp; Orchestration</div>
+      <p>Kubernetes (AKS, EKS) · Docker (multi-stage builds) · Helm · ECS Fargate · NGINX Ingress · cert-manager · Let's Encrypt TLS</p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-label">Infrastructure as Code</div>
+      <p>Terraform (modular, remote state in S3 / Azure Blob) · Ansible (multi-VM configuration) · Bash scripting</p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-label">CI/CD &amp; Automation</div>
+      <p>GitHub Actions · 4-stage pipelines (test → build → scan → deploy) · ECR / ACR image management · Rolling ECS deploys · Helm upgrades</p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-label">Observability</div>
+      <p>Prometheus · Grafana · CloudWatch Container Insights · AWS X-Ray · Winston structured logging · alerting &amp; alarms</p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-label">Security &amp; Networking</div>
+      <p>IAM / RBAC · AWS Secrets Manager · Azure Key Vault · TLS / ACM · VPC / VNet design · Security groups · NAT Gateway · Cloudflare Tunnel · CDN</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROJECTS ──────────────────────────────────────── -->
+<section id="projects">
+  <div class="section-tag">Portfolio Projects</div>
+  <h2>Production deployments</h2>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-head">
+        <div class="project-title">FeedbackHQ AWS Full-Stack Production</div>
+        <div class="project-badge">Live ✓</div>
+      </div>
+      <p class="project-desc">
+        Three-tier Node.js/React application deployed on AWS ECS Fargate. Full modular Terraform across 7 modules (VPC, ALB, ECS, RDS MySQL, ElastiCache Redis, IAM, ECR). 4-stage GitHub Actions pipeline: Jest tests against real MySQL/Redis service containers → multi-stage Docker builds → Trivy CVE scanning → rolling ECS deploy with circuit-breaker rollback. Zero-downtime deployments with deployment_minimum_healthy_percent=100. Secrets in AWS Secrets Manager, CloudWatch Container Insights observability, Cloudflare proxy. Live at <strong>app.heros.com.ng</strong>.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">AWS ECS Fargate</span>
+        <span class="tech-tag">RDS MySQL</span>
+        <span class="tech-tag">ElastiCache Redis</span>
+        <span class="tech-tag">ALB</span>
+        <span class="tech-tag">Terraform (7 modules)</span>
+        <span class="tech-tag">GitHub Actions</span>
+        <span class="tech-tag">Docker</span>
+        <span class="tech-tag">Secrets Manager</span>
+        <span class="tech-tag">CloudWatch</span>
+        <span class="tech-tag">Cloudflare</span>
+        <span class="tech-tag">ACM</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/kristarking/feedbackhq" target="_blank">⌥ GitHub →</a>
+        <a href="https://app.heros.com.ng" target="_blank">↗ Live App</a>
+      </div>
     </div>
 
-    <h2>Projects</h2>
-    <p>
-  <strong>
-    <a href="https://github.com/kristarking/cloud-devops-portfolio" target="_blank">
-      CI/CD Pipeline: Node.js App with GitHub Actions
-    </a>
-  </strong>
-  <br>
-    Dockerized Node.js app built, tested, and deployed using GitHub Actions. Image pushed to Docker Hub and deployed on Azure VM via NGINX.
-    </p>
+    <div class="project-card">
+      <div class="project-head">
+        <div class="project-title">Tooling Web App Azure AKS Production</div>
+        <div class="project-badge">Live ✓</div>
+      </div>
+      <p class="project-desc">
+        PHP tooling application deployed to Azure Kubernetes Service end-to-end. Infrastructure provisioned with Terraform, CI/CD via GitHub Actions, TLS via cert-manager + Let's Encrypt DNS-01 challenge over Cloudflare API, Prometheus/Grafana monitoring. Resolved ISP-level Azure IP blocking affecting Nigerian users by deploying a Cloudflare Tunnel as a Kubernetes workload inside AKS documented as an architectural decision, not a workaround. Includes a detailed troubleshooting journal: ACME challenges, NSG rule bugs, region migration, and the tunnel solution. Live at <strong>heros.com.ng</strong>.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">Azure AKS</span>
+        <span class="tech-tag">ACR</span>
+        <span class="tech-tag">Terraform</span>
+        <span class="tech-tag">Helm</span>
+        <span class="tech-tag">GitHub Actions</span>
+        <span class="tech-tag">cert-manager</span>
+        <span class="tech-tag">Cloudflare Tunnel</span>
+        <span class="tech-tag">Prometheus</span>
+        <span class="tech-tag">Grafana</span>
+        <span class="tech-tag">MySQL StatefulSet</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/kristarking/tooling-project" target="_blank">⌥ GitHub →</a>
+        <a href="https://heros.com.ng" target="_blank">↗ Live App</a>
+      </div>
+    </div>
 
-    <p><strong>JS Clock App Load Balanced on Cloned Azure VMs</strong><br>
-    Created a JavaScript time-zone app, cloned base VM image into multiples, and configured load balancer to manage traffic.
-    </p>
+    <div class="project-card">
+      <div class="project-head">
+        <div class="project-title">Node.js CI/CD Pipeline</div>
+        <div class="project-badge">GitHub</div>
+      </div>
+      <p class="project-desc">
+        Automated CI/CD pipeline for a Node.js application using GitHub Actions. Containerised with Docker, image pushed to Docker Hub, deployed to Azure VM with Docker Compose and NGINX reverse proxy.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">Docker</span>
+        <span class="tech-tag">GitHub Actions</span>
+        <span class="tech-tag">NGINX</span>
+        <span class="tech-tag">Azure VM</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/kristarking/cloud-devops-portfolio" target="_blank">⌥ GitHub →</a>
+      </div>
+    </div>
 
-    <p><strong>Static HTML E-commerce with HTTPS & Custom Domain</strong><br>
-    Deployed HTML site on Azure VM, configured NGINX SSL, routed DNS to domain name with HTTPS enforcement.
-    </p>
-
-    <p><strong>AKS Deployment: Go App with Helm & Ingress</strong><br>
-    Containerized Go app deployed to AKS using Helm charts with Ingress Controller, Key Vault integration, and autoscaling setup.
-    </p>
-
-    <p><strong>Ansible Automation Across Azure VMs</strong><br>
-    Provisioned and configured target VM from control node using Ansible playbooks to install NGINX and deploy apps.
-    </p>
-
-    <p><strong>Multi-Tenant Azure Setup for Identity Practice</strong><br>
-    Created multiple Azure tenants and users for internal practice and YouTube teaching content on cloud access control.
-    </p>
-
-    <h2>Contact</h2>
-    <p>
-      📧 Email: ojedayochristopher@gmail.com<br/>
-      🔗 GitHub: <a href="https://github.com/kristarking" target="_blank" style="color: #00d9ff;">kristarking</a><br/>
-      🎥 YouTube: <a href="https://www.youtube.com/@kristarking" target="_blank" style="color: #00d9ff;">@kristarking</a>
-    </p>
   </div>
+</section>
+
+<!-- ─── EXPERIENCE ─────────────────────────────────────── -->
+<section id="experience">
+  <div class="section-tag">Experience</div>
+  <h2>Where I've worked</h2>
+  <div class="exp-list">
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-date">June 2024 – Present</div>
+        <div class="exp-co">Hagital Consulting</div>
+        <div class="exp-date" style="margin-top:0.2rem">Remote, Nigeria</div>
+      </div>
+      <div>
+        <div class="exp-title">Cloud &amp; DevOps Engineer</div>
+        <ul class="exp-bullets">
+          <li>Delivered two end-to-end production cloud deployments Azure AKS (tooling app) and AWS ECS Fargate (FeedbackHQ) both live with TLS, DNS, monitoring, and open-source documentation.</li>
+          <li>Provisioned cloud infrastructure using modular Terraform with remote state, reducing provisioning time by 60%+.</li>
+          <li>Built 4-stage GitHub Actions CI/CD pipelines: automated testing, Docker image builds, Trivy security scanning, and zero-downtime rolling deploys.</li>
+          <li>Deployed and operated Kubernetes clusters (AKS) with Helm, cert-manager, NGINX Ingress, HPA autoscaling, and Prometheus/Grafana observability.</li>
+          <li>Designed secure 3-tier VPC architecture on AWS with ALB-only ingress, private subnets for all compute and data, and least-privilege IAM per service.</li>
+          <li>Automated configuration of 20+ Linux VMs with Ansible playbooks.</li>
+          <li>Delivering structured DevOps curriculum to a professional cohort covering Azure, Terraform, Docker, and GitHub Actions.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-date">May 2023 – May 2024</div>
+        <div class="exp-co">Hocia Limited</div>
+        <div class="exp-date" style="margin-top:0.2rem">Abuja, Nigeria</div>
+      </div>
+      <div>
+        <div class="exp-title">Co-Founder &amp; Operations Manager</div>
+        <ul class="exp-bullets">
+          <li>Founded and scaled a recycling operation, managing a 47-person team across logistics, scheduling, and operations.</li>
+          <li>Designed operational workflows and inventory systems the systems thinking directly applied to DevOps lifecycle management today.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-date">Oct 2018 – May 2023</div>
+        <div class="exp-co">Ocia Multi-service</div>
+        <div class="exp-date" style="margin-top:0.2rem">Nigeria</div>
+      </div>
+      <div>
+        <div class="exp-title">WordPress Web Designer</div>
+        <ul class="exp-bullets">
+          <li>Designed and maintained WordPress websites for business clients, managing hosting, domains, SSL, and uptime.</li>
+          <li>Built production web systems experience (DNS, SSL, server troubleshooting) years before transitioning to cloud engineering.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── ABOUT ──────────────────────────────────────────── -->
+<section id="about">
+  <div class="section-tag">About</div>
+  <h2>The longer version</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I'm a Cloud and DevOps Engineer based in Lagos, Nigeria, with 2+ years of hands-on production experience on Azure and AWS. I transitioned into cloud from web design and, before that, ran a 47-person recycling operation. The systems thinking from both carries directly into how I design infrastructure.</p>
+      <p>My work shows up in production, not just tutorials. Both of my main portfolio projects are live, HTTPS-secured applications with real CI/CD pipelines, monitoring stacks, and documented architecture. I solve real problems: when Nigerian ISPs blocked Azure IP ranges entirely, I deployed a Cloudflare Tunnel inside AKS and shipped the feature anyway.</p>
+      <p>I teach cloud and DevOps at Hagital Consulting, create content on TikTok and YouTube for Nigerian career-switchers, and write technical articles on Dev.to. I'm targeting mid/senior DevOps roles in Europe.</p>
+    </div>
+    <div class="about-stats">
+      <div class="stat-card">
+        <span class="stat-num">2+</span>
+        <div class="stat-label">Years DevOps Experience</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num">2</span>
+        <div class="stat-label">Live Production Deployments</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num">2</span>
+        <div class="stat-label">Cloud Platforms (Azure + AWS)</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num">20+</span>
+        <div class="stat-label">VMs Automated via Ansible</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ────────────────────────────────────────── -->
+<section id="contact">
+  <div class="section-tag">Contact</div>
+  <h2>Let's work together</h2>
+  <p>I'm actively looking for mid or senior Cloud / DevOps Engineer roles, remote or EU relocation with visa sponsorship. If you're hiring, let's talk.</p>
+  <div class="contact-links">
+    <a class="contact-link" href="mailto:ojedayochristopher@gmail.com">✉ Email</a>
+    <a class="contact-link" href="https://linkedin.com/in/christopherojedayo" target="_blank">💼 LinkedIn</a>
+    <a class="contact-link" href="https://github.com/kristarking" target="_blank">⌥ GitHub</a>
+    <a class="contact-link" href="https://dev.to/kristarking" target="_blank">📝 Dev.to</a>
+  </div>
+  <a href="Christopher_Ojedayo_CV.docx" class="btn-primary" download>⬇ Download CV</a>
+</section>
+
+<footer>
+  <p>Christopher Ojedayo · Cloud &amp; DevOps Engineer · Lagos, Nigeria · Open to EU relocation</p>
+</footer>
+
 </body>
 </html>
